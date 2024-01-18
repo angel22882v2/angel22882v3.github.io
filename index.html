@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Project 2</title>
+    <style>
+        body {
+            background-color: rgb(38, 38, 38);
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            transition: background-image 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const image_urls = ["https://i.imgur.com/zHbK8Ii.png","https://i.imgur.com/8Dkka5j.png","https://i.imgur.com/HEyWycM.png","https://i.imgur.com/l3vmFoS.png","https://i.imgur.com/P9h6imU.png","https://i.imgur.com/wl2fRt8.png","https://i.imgur.com/j4gP3Bc.png"];
+    
+    let currentImageIndex = 0;
+    let body = document.getElementsByTagName('body')[0];
+    function changeBackgroundImage() {
+        currentImageIndex = (currentImageIndex + 1) % image_urls.length;
+        body.style.backgroundImage = 'url(' + image_urls[currentImageIndex]; + ')';
+        console.log(image_urls[currentImageIndex]);
+    }
+
+    // Таймер смены раз в 5 сек
+    changeBackgroundImage();
+    setInterval(changeBackgroundImage, 5000);
+</script>
+</body>
+</html>
